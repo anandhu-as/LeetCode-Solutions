@@ -2,14 +2,17 @@
  * @param {number[]} nums
  * @return {number}
  */
+//421
+//124
+//3 is the missng num
 var missingNumber = function(nums) {
-    let sum = 0;
+    nums.sort((a, b) => a - b);
+
     for (let i = 0; i < nums.length; i++) {
-        sum += nums[i];
+        if (nums[i] !== i) {
+            return i;
+        }
     }
 
-    let n = nums.length;
-    let actualsum = n * (n + 1) / 2;
-
-    return actualsum - sum;
+    return nums.length;
 };
