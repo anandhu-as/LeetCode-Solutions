@@ -12,7 +12,7 @@ const isValid = (s) => {
         if (char === "(" || char === "{" || char === "[") {
             stack.push(char);
         } else {
-            let prevVal = stack.pop();
+            const prevVal = stack.pop();
 
             if (prevVal === "(" && char !== ")") return false;
             if (prevVal === "[" && char !== "]") return false;
@@ -23,4 +23,3 @@ const isValid = (s) => {
 
     return stack.length === 0;
 };
-
